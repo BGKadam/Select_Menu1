@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="SelectText">Select Social Media</p>
+                <img src="./arrow.png" id="arrowIcon">
+            </div>
+
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="./facebook.png">
+                    <p>facebook</p>
+                </li>
+                <li class="options">
+                    <img src="./pinterest.png">
+                    <p>pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="./youtube.png">
+                    <p>youtube</p>
+                </li>
+                <li class="options">
+                    <img src="./instagram.png">
+                    <p>instagram</p>
+                </li>
+                <li class="options">
+                    <img src="./twitter.png">
+                    <p>twitter</p>
+                </li>
+                <li class="options">
+                    <img src="./whatsapp.png">
+                    <p>whatsapp</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        var selectField = document.getElementById("selectField");
+        var selectText = document.getElementById("SelectText");
+        var options = document.getElementsByClassName("options");
+        var list = document.getElementById("list");
+        var arrowIcon = document.getElementById("arrowIcon");
+
+        selectField.onclick = function () {
+            list.classList.toggle("hide");//it removeclass name whenever we click on selectFiels and all container is select or hide
+            arrowIcon.classList.toggle("rotate");
+        }
+
+        for (filed of options) {//field is only just variable naame
+            filed.onclick = function () {
+                SelectText.innerHTML = this.textContent;//it will  select the content  of this option it will store content in selecttext.
+                list.classList.toggle("hide");
+                arrowIcon.classList.toggle("rotate");
+            }
+        }
+    </script>
+</body>
+
+</html>
